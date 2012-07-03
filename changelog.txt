@@ -1,0 +1,543 @@
+HERO FRAMEWORK CHANGELOG
+
+===================================================
+
+Published May 13th, 2012
+
+May 13th, 2012
+----------------------------------------------
+
+*  Updated to 3.76.
+
+May 11th, 2012
+----------------------------------------------
+
+*  Updated eWay gateway.
+
+May 9th, 2012
+----------------------------------------------
+
+*  Added all currency codes to PayPal Express Checkout.
+
+May 4th, 2012
+----------------------------------------------
+
+*  Force E-xact to require a CVV in the charge.
+
+May 2nd, 2012
+----------------------------------------------
+
+*  Loaded chargemodel in SagePay process().
+
+April 30th, 2012
+----------------------------------------------
+
+*  remove test code from eWAY
+
+April 19th, 2012
+----------------------------------------------
+
+*  Fixed typo.
+
+April 18th, 2012
+----------------------------------------------
+
+*  Add exception for BMP files in image_thumb_helper.php
+
+April 16th, 2012
+----------------------------------------------
+
+*  Beefed up the is_ssl() function.
+
+April 15th, 2012
+----------------------------------------------
+
+*  Updated to 3.75.
+*  Updated billing module to 1.22.
+*  Added hooks: checkout_billing_shipping, checkout_payment, checkout_shipping_method.
+
+April 13th, 2012
+----------------------------------------------
+
+*  Removed type="textarea" from the textarea custom_field library.
+
+April 12th, 2012
+----------------------------------------------
+
+*  Fixed bug that caused Update Cart to not update QTY when a product was not tracking inventory.
+
+April 9th, 2012
+----------------------------------------------
+
+*  PayPal EC free trial fix.
+
+April 2nd, 2012
+----------------------------------------------
+
+*  Don't issue PayPal charge if amount == 0.
+*  Respond to .xml URL's in template controller with a content-type: text/xml.
+*  Don't include subscription price in cart total if there's a free trial.
+*  Add XML header to publish controller, if .xml is accessed.
+
+March 30th, 2012
+----------------------------------------------
+
+*  Add quantity check to update cart screen.
+
+March 28th, 2012
+----------------------------------------------
+
+*  Record response from PayPal.
+
+March 27th, 2012
+----------------------------------------------
+
+*  Fixed inventory tracking for multiple order purchases.
+
+March 22nd, 2012
+----------------------------------------------
+
+*  Added ISK to Wirecard gateway.
+
+March 21st, 2012
+----------------------------------------------
+
+*  Updated to 3.74.
+*  Prevent users from updating their profile to an existing username/email.
+
+March 20th, 2012
+----------------------------------------------
+
+*  Added Swiss Franc to PayPal currencies.
+*  Don't retrieve content from cache when searching content in get_contents().
+
+March 15th, 2012
+----------------------------------------------
+
+*  Fixed SagePay.
+
+March 5th, 2012
+----------------------------------------------
+
+*  Don't create PayPal Pro profile for 1 charge.
+*  User module optimization.
+
+March 4th, 2012
+----------------------------------------------
+
+*  Ensure that E-xact transactions have bank authorization.
+
+February 17th, 2012
+----------------------------------------------
+
+*  Fixed Authnet XML bugs.
+
+February 6th, 2012
+----------------------------------------------
+
+*  Lookup order by order_id in users controller, not order_details_id.
+
+February 4th, 2012
+----------------------------------------------
+
+*  Don't force phone_number unless it's passed to checkout (don't want to break old sites).
+*  Added {$line.sku} to get_invoice_lines().
+*  Fixed {$formatted_shipping_address} in invoice.thtml.
+*  Updated to 3.73.
+*  Added phone number to billing and shipping fields.
+*  Fixed get_contents() cache use with rand() sort_dir.
+
+February 3rd, 2012
+----------------------------------------------
+
+*  Updated to 3.72.
+
+February 2nd, 2012
+----------------------------------------------
+
+*  Manage Products page now allows filtering of products by Collection.
+*  Fixed bug that cause inaccurate pagination when due to products not being removed from collection when they were deleted.
+*  Fixed SagePay library.
+
+January 30th, 2012
+----------------------------------------------
+
+*  Menu Manager now allows for editing of external links in the menu.
+*  Add username index.
+
+January 27th, 2012
+----------------------------------------------
+
+*  Calculate tax from shipping address if available.
+
+January 26th, 2012
+----------------------------------------------
+
+*  Added more variables to invoice() in users controller.
+*  Allowed html_header and html_footer views to be branded.
+
+January 24th, 2012
+----------------------------------------------
+
+*  Fixed topic nesting bug.
+*  Updated to 3.71.
+*  Fixed update_content hook bug.
+*  Added product_name and product_options to $lines variable in the invoice template.
+
+January 23rd, 2012
+----------------------------------------------
+
+*  Show help text for custom fields in control panel.
+
+January 21st, 2012
+----------------------------------------------
+
+*  Added delete_topic and delete_content hooks.
+
+January 20th, 2012
+----------------------------------------------
+
+*  Added x_invoice_num to Authnet single charges.
+
+January 18th, 2012
+----------------------------------------------
+
+*  Added hooks: new_topic, update_topic, new_content, update_content.
+*  Fixed null charge ID issue.
+
+January 16th, 2012
+----------------------------------------------
+
+*  Don't send BillingState for Canada in SagePay.
+*  Added "coupon_code" to get_invoices().
+*  Custom Text fields now correctly display empty default values.
+
+January 13th, 2012
+----------------------------------------------
+
+*  Fixed more coupon issues during checkout.
+
+January 12th, 2012
+----------------------------------------------
+
+*  Product coupon now reduces each product.
+*  Added new Topic filter to the Manage Content screens.
+
+January 9th, 2012
+----------------------------------------------
+
+*  Allow for null recurring charges to be processed by using the gateway's "Charge" API.
+
+January 8th, 2012
+----------------------------------------------
+
+*  Fixed hook_subscription_renew bug.
+
+January 7th, 2012
+----------------------------------------------
+
+*  Added more info to invoice report.
+*  Added new variables to get_invoices().
+*  Added quantity to product variables for store_order email.
+
+January 6th, 2012
+----------------------------------------------
+
+*  Applied coupons now provide clearer message when the coupon does not apply to products in the cart.
+
+January 4th, 2012
+----------------------------------------------
+
+*  Added additional condition to in_group check.
+
+January 3rd, 2012
+----------------------------------------------
+
+*  Added Member Group and Subscription Plan relationship custom fieldtypes.
+*  Added {$order_totals} array available for all emails with an "order" ID passed via app_hooks.
+*  Fixed a bug that didn't fully clear the cart after an order.
+
+December 22nd, 2011
+----------------------------------------------
+
+*  Updated to 3.70.
+*  Process usergroups when renewing subscriptions properly binding to subscription_renew hook.
+
+December 10th, 2011
+----------------------------------------------
+
+*  Format double quotes for CSV exports.
+
+December 9th, 2011
+----------------------------------------------
+
+*  Added escaping to RSS feeds.
+
+December 6th, 2011
+----------------------------------------------
+
+*  Enabled HTML emails in Members > Send Email.
+*  Fixed field deletion bug.
+
+December 5th, 2011
+----------------------------------------------
+
+*  Fixed credit card expiry code.
+*  Fixed multiple product listings for each image.
+
+November 26th, 2011
+----------------------------------------------
+
+*  Added helpful errors to rare PayPal standard failures.
+
+November 23rd, 2011
+----------------------------------------------
+
+*  Added Stripe gateway integration.
+
+November 22nd, 2011
+----------------------------------------------
+
+*  Stop possible SQL injection on usernames.
+
+November 17th, 2011
+----------------------------------------------
+
+*  Added Singapore Dollar to PayPal EC currency.
+
+November 16th, 2011
+----------------------------------------------
+
+*  Added CW and SX to countries.  Updated to 3.69.
+*  Fixed reference to subscription_id in PayPal Standard.
+
+November 12th, 2011
+----------------------------------------------
+
+*  Updated to 3.68.
+*  Added a left-menu to member profile, with more links.
+*  Don't show a member drop down if we have more than 5000 members.
+
+November 11th, 2011
+----------------------------------------------
+
+*  Product options can now be edited and created globally under Storefront / Product Options
+*  Changed email validation in universal.js.
+*  FCKEditor compatibility upgrade.
+
+November 2nd, 2011
+----------------------------------------------
+
+*  Allow passing arrays to {protected_link} with pipeline delimiter.
+
+November 1st, 2011
+----------------------------------------------
+
+*  Cancel subscriptions on next_charge date, even if card expires prior.
+
+October 31st, 2011
+----------------------------------------------
+
+*  Cancellations now end on the next charge date.
+
+October 22nd, 2011
+----------------------------------------------
+
+*  Make member_register hook optional.
+
+October 21st, 2011
+----------------------------------------------
+
+*  Avoid the country/state customer error when creating a new user.
+
+October 15th, 2011
+----------------------------------------------
+
+*  Updated to 3.67.
+*  Fixed bug with no custom fields in {members} block.
+
+October 10th, 2011
+----------------------------------------------
+
+*  Fix search issue with terms that have double quotes in products.
+*  Fix search issue with terms that have double quotes in content searches.
+
+October 6th, 2011
+----------------------------------------------
+
+*  We no longer pass totalbillingcycles to PayPal, because we pre-emptively cancel anyways and don't want to limit ourselves down the road.
+
+October 5th, 2011
+----------------------------------------------
+
+*  If the user buys a subscription and products but has a current total of $0 at checkout, we still create an order so that their cart is processed.
+*  Fixed a bug with free trial E-xact coupons.
+*  Fixed free trial coupons applied during checkout.
+
+October 4th, 2011
+----------------------------------------------
+
+*  Fixed smarty_assigned bug.
+*  Fixed a bug that kept < $1 subscriptions from recurring.
+
+October 2nd, 2011
+----------------------------------------------
+
+*  Updated ci_sessions table to stop session agent match failures.
+
+September 30th, 2011
+----------------------------------------------
+
+*  Fixed issue with NULL fields on featured product images.
+*  Fixed usergroups DB compatibility issue.
+
+September 29th, 2011
+----------------------------------------------
+
+*  Added support for password fields for gateway edit screens.
+*  Updated text in config.
+*  Updated default session cookie life to 24 hours.
+*  Updated to version 3.66.
+*  Fixed anticipatory fix in PayPal.
+
+September 28th, 2011
+----------------------------------------------
+
+*  Fixed E-xact response to failed recurring payments.
+*  Corrected null value errors on installation.
+*  Fixed redirect bug from account page during checkout.
+
+September 27th, 2011
+----------------------------------------------
+
+*  Fixed MySQL string issue in get_contents() with searches.
+
+September 23rd, 2011
+----------------------------------------------
+
+*  Speed up thumbnail processing in KCFinder.
+
+September 20th, 2011
+----------------------------------------------
+
+*  Fixed errors with Authorize.net gateway when not on an SSL server.
+
+September 19th, 2011
+----------------------------------------------
+
+*  Don't attempt to build search index if no fields are available in a content type.
+*  Updated to 3.65.
+*  Fixed poor reference to future_only in datetime fieldtype.
+*  Added mp4 and FLV filetypes to mime array.
+*  Don't require email validation for backend-created accounts.
+
+September 15th, 2011
+----------------------------------------------
+
+*  Fixed product model to clear cache of product images at appropriate times.
+*  Updated core plan model.
+
+September 14th, 2011
+----------------------------------------------
+
+*  Major fix which interfered with sequential empty block loops in Smarty library!
+*  Retain keys in sorting of shipping rates.
+
+September 13th, 2011
+----------------------------------------------
+
+*  Fixed backend searching by response ID in form responses.
+*  Email now sent with PayPal Pro Charge requests.
+*  $totals variable now available in all checkout templates.
+*  Shipping rates are now sorted in ascending order.
+
+September 12th, 2011
+----------------------------------------------
+
+*  Fixed potential install issue with publish module.
+*  Fixed potential conflict with content_type_id index in publish module.
+*  Updated to 3.64.  Included files that should have been part of the last deploy.
+
+September 11th, 2011
+----------------------------------------------
+
+*  Updated to 3.63.
+*  Added "Topic Relationship" custom fieldtype.
+
+September 9th, 2011
+----------------------------------------------
+
+*  Fixed issue that limited product options assigned to a product.
+
+September 7th, 2011
+----------------------------------------------
+
+*  Fixed "Last" link in pagination.
+*  Properly set default values in forms.
+
+September 6th, 2011
+----------------------------------------------
+
+*  Added product paging by default in all themes.
+*  Cap form table names at 50 characters.
+
+September 5th, 2011
+----------------------------------------------
+
+*  Added {$subscription.gateway_id} to email variable listings, where applicable.
+*  Upgraded to 3.62.
+*  Upgraded CKEditor to 3.6.1.
+
+September 2nd, 2011
+----------------------------------------------
+
+*  Declared $response in exact->ChargeRecurring.
+
+September 1st, 2011
+----------------------------------------------
+
+*  Shortened default app name to "Hero".
+*  Removed final references to billing module in user model, registration process.
+*  Removed passing smarty by reference to smarty->pre_filter().
+
+August 31st, 2011
+----------------------------------------------
+
+*   Make it possible to force SSL in the control panel.
+*  Coupon reports now show proper subscription and product usages.  Allow for searching by coupon code.
+*  Fixed issue where "update cart" removed subscriptions from cart.
+
+August 30th, 2011
+----------------------------------------------
+
+*  Modified Form_validation to properly use helper functions as validators.  Modifications are marked.
+*  Added /app/config/custom_routes.php for custom routes that won't get overwritten in updates.
+
+August 28th, 2011
+----------------------------------------------
+
+*  Upgrade to 3.6.
+*  Added caching to content types, menus, and products.
+*  Enabled caching for get_contents() calls.
+*  Fixed a bug that might retrieve multiple product records for an order if the billing module has been re-installed.
+*  Set "Electric" as the initial default theme.
+*  Added the new "Electric" default theme.
+*  Fixed the {content} template tag's handling of custom field parameters.
+
+August 27th, 2011
+----------------------------------------------
+
+*  Link directly to the installation wizard in the "not installed" message.
+*  Added cron_log() helper, more detailed cron logging.
+*  Don't install the default theme upon first page load if it's a cron load.
+*  Applied similar fixes to store product download.
+*  Fixed {protected_link} file downloads by repairing mime-type retrieval and filesize() path.
+*  Made Active Record _reset_select() public as well.  These should not be protected methods.
+*  The Active Record _compile_select() function has been made public, despite being "protected" in the latest CodeIgniter release.
+*  Upgrade CodeIgniter to version 2.0.3.
+
+August 26th, 2011
+----------------------------------------------
+
+*  Added phpdoc-formatted headers to all helper files.
+*  Now posting public changelog comments!

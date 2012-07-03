@@ -1,0 +1,58 @@
+{extends file="layout.thtml"}
+{block name="title"}
+{if $title}{$title}{elseif $collection}{$collection.name}{/if} - {$smarty.block.parent}
+{/block}
+{block name="sidebar_top"}
+	<div class="sidebar_block">
+		<div class="sidebar_head"></div>
+		<div class="sidebar_body">
+			<h3>Our Store Promise</h3>
+			<p>We'll delivery only the freshest fruit to your door, any day of the week!  If you don't like it, we'll refund you + 10%.</p>
+		</div>
+		<div class="sidebar_foot"></div>
+	</div>
+{/block}
+{block name="content"}
+	<h1>Browse Our Store</h1>
+	
+	<div class="store">
+		{if $collections}
+			<ul class="collections">
+			{foreach $collections as $collection}
+				<li>
+					<a class="image" href="{$collection.url}"><img src="{thumbnail path=$collection.image width="50" height="50"}" alt="{$collection.name}" /></a>
+					<a class="name" href="{$collection.url}">{$collection.name}</a>
+					{if $collection.description}<div class="description">{$collection.description}</div>{/if}
+				</li>
+			{/foreach}
+			</ul>
+		{else}
+			<a class="back_button" href="{url path="store"}" style="width: 120px; margin-bottom: 15px;">back to store categories</a>
+		{/if}
+		
+		{if $products}
+			<ul class="products {if $collections}with_collections{/if}">
+			{foreach $products as $product}
+				<li>
+					{if $product.feature_image}
+						<a class="image" href="{$product.url}"><img src="{thumbnail path=$product['feature_image'] width="110" height="110"}" alt="{$product.name}" /></a>
+					{/if}
+					<div class="details">
+						<a class="name" href="{$product.url}">{$product.name}</a>
+						<div class="price">{setting name="currency_symbol"}{$product.price}</div>
+						<div class="description">{shorten string=$product.description length="250"}</div>
+					</div>
+				</li>
+			{/foreach}
+			</ul>
+			
+			<div style="clear:both">
+				{paginate variable="page" base_url=$current_url total_rows=$total_products per_page=$products_per_page}
+			</div>
+		{/if}
+	</div>
+	
+	{if !$collections and !$products}
+	<p>This collection is empty.  Add some categories and/or products to populate this page.</p>
+	{/if}
+{/block}
