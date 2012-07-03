@@ -137,19 +137,19 @@ class Text_fieldtype extends Fieldtype {
 		// run $this->validators
 		if (!empty($this->validators)) {
 			foreach ($this->validators as $validator) {
-				if ($validator == 'trim') {
+				if ($validator == 'whitespace') {
 					$rules[] = 'trim';
 				}
-				elseif ($validator == 'alpha_numeric') {
+				elseif ($validator == 'alphanumeric') {
 					$rules[] = 'alpha_numeric';
 				}
 				elseif ($validator == 'numeric') {
 					$rules[] = 'numeric';
 				}
-				elseif ($validator == 'valid_domain') {
+				elseif ($validator == 'domain') {
 					$rules[] = 'valid_domain';
 				}
-				elseif ($validator == 'valid_email') {
+				elseif ($validator == 'email') {
 					$rules[] = 'valid_email';
 				}
 				elseif ($validator == 'strip_tags') {
