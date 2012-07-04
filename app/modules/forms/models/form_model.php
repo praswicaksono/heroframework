@@ -324,6 +324,8 @@ class Form_model extends CI_Model
 					}
 					else {
 						$value = $custom_fields[$field['name']] . ' (Download: ' . site_url($custom_fields[$field['name']]);
+						// attach uploaded file(s) to email
+						$this->email->attach($custom_fields[$field['name']]);
 					}
 				}
 				else {
@@ -342,6 +344,10 @@ class Form_model extends CI_Model
 			$this->email->message($body);
 			
 			$this->email->send();
+
+			// delete files after email was sent
+			$this->load->helper('file');
+			delete_files('writeable/custom_uploads',TRUE);
 		}
 		
 		return $insert_id;
