@@ -348,6 +348,7 @@ class Form_model extends CI_Model
 			// delete files after email was sent
 			$this->load->helper('file');
 			delete_files('writeable/custom_uploads',TRUE);
+			// =======
 		}
 		
 		return $insert_id;
