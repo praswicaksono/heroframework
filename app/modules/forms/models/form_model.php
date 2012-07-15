@@ -313,7 +313,9 @@ class Form_model extends CI_Model
 			else {
 				$lines[] = 'Member: None';
 			}
-
+			$x = 0;
+			$attached_file = array();
+			
 			foreach ($form['custom_fields'] as $field) {
 				if (@is_array(unserialize($custom_fields[$field['name']]))) {
 					$value = implode(', ', unserialize($custom_fields[$field['name']]));
@@ -325,6 +327,8 @@ class Form_model extends CI_Model
 					else {
 						$value = $custom_fields[$field['name']] . ' (Download: ' . site_url($custom_fields[$field['name']]);
 						// attach uploaded file(s) to email
+						$x = $x + 1;
+						$attached_file[$x] = $custom_fields[$field['name']];
 						$this->email->attach($custom_fields[$field['name']]);
 					}
 				}
@@ -344,11 +348,11 @@ class Form_model extends CI_Model
 			$this->email->message($body);
 			
 			$this->email->send();
-
-			// delete files after email was sent
-			$this->load->helper('file');
-			delete_files('writeable/custom_uploads',TRUE);
-			// =======
+			while($x != 0)
+			{
+				@unlink($attached_file[$x]);
+				$x = $x - 1;
+			}
 		}
 		
 		return $insert_id;
